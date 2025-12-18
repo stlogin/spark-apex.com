@@ -80,15 +80,15 @@ function FeatureCard({
       }}
       viewport={{ once: true }}
     >
-      <Card className="border-none bg-background/50 backdrop-blur">
+      <Card className="border-none bg-background/50 backdrop-blur h-full flex flex-col">
         <CardHeader>
           <div className="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-muted text-sm font-medium">
             {number}
           </div>
           <CardTitle className="text-xl font-bold">{title}</CardTitle>
         </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground mb-8">{description}</p>
+        <CardContent className="flex flex-col flex-grow">
+          <p className="text-muted-foreground mb-8 flex-grow">{description}</p>
           {icon}
         </CardContent>
       </Card>

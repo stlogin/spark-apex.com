@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Check, Shield, Users, Server, Database, Globe, Code, Lightbulb, Rocket, Circle, Clock, CheckCircle2 } from "lucide-react";
+import { Check, Shield, Users, Server, Database, Globe, Code, Lightbulb, Rocket, Clock, CheckCircle2 } from "lucide-react";
 import DisplayCards from "@/components/prismui/display-cards";
 import { LogoCarousel } from "@/components/prismui/logo-carousel";
 
@@ -27,7 +27,7 @@ const expertTeamCards = [
     iconClassName: "text-purple-500",
     titleClassName: "text-purple-500",
     className:
-      "[grid-area:stack] translate-x-0 sm:translate-x-12 translate-y-10 hover:-translate-y-1 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 before:left-0 before:top-0",
+      "[grid-area:stack] translate-x-12 translate-y-10 hover:-translate-y-1 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 before:left-0 before:top-0",
   },
   {
     icon: <Rocket className="size-4 text-green-300" />,
@@ -37,7 +37,7 @@ const expertTeamCards = [
     iconClassName: "text-green-500",
     titleClassName: "text-green-500",
     className:
-      "[grid-area:stack] translate-x-0 sm:translate-x-24 translate-y-20 hover:translate-y-10",
+      "[grid-area:stack] translate-x-24 translate-y-20 hover:translate-y-10",
   },
 ];
 
@@ -54,9 +54,9 @@ function FeatureCard({ title, description, children }: FeatureCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       viewport={{ once: true }}
-      className="relative rounded-xl border bg-background"
+      className="relative rounded-xl border bg-background h-full flex flex-col"
     >
-      <div className="p-8">
+      <div className="p-8 flex-grow">
         <h3 className="text-2xl font-bold">{title}</h3>
         <p className="mt-2 text-muted-foreground text-lg">{description}</p>
       </div>
@@ -66,13 +66,6 @@ function FeatureCard({ title, description, children }: FeatureCardProps) {
 }
 
 const kanbanColumns = [
-  {
-    title: "To Do",
-    icon: Circle,
-    color: "text-slate-400",
-    bgColor: "bg-slate-500/20",
-    tasks: ["API Design", "Database Schema"],
-  },
   {
     title: "In Progress",
     icon: Clock,
@@ -91,7 +84,7 @@ const kanbanColumns = [
 
 function KanbanBoardDemo() {
   return (
-    <div className="w-full flex gap-3">
+    <div className="flex gap-3">
       {kanbanColumns.map((column, colIndex) => (
         <motion.div
           key={column.title}
@@ -103,12 +96,12 @@ function KanbanBoardDemo() {
             ease: [0.16, 1, 0.3, 1],
           }}
           viewport={{ once: true }}
-          className="flex-1 min-w-0"
+          className="w-24 md:w-32 lg:w-48"
         >
           <div className="flex items-center gap-2 mb-3">
             <column.icon className={cn("h-4 w-4", column.color)} />
-            <span className="text-xs font-medium truncate">{column.title}</span>
-            <span className="text-xs text-muted-foreground">({column.tasks.length})</span>
+            <span className="text-xs md:text-sm font-medium truncate">{column.title}</span>
+            <span className="text-xs md:text-sm text-muted-foreground">({column.tasks.length})</span>
           </div>
           <div className="space-y-2">
             {column.tasks.map((task, taskIndex) => (
@@ -123,7 +116,7 @@ function KanbanBoardDemo() {
                 }}
                 viewport={{ once: true }}
                 className={cn(
-                  "p-2 rounded-lg text-xs truncate",
+                  "p-2 rounded-lg text-xs md:text-sm truncate",
                   column.bgColor
                 )}
               >
@@ -141,12 +134,11 @@ const chatMessages = [
   { id: 1, type: "user", message: "System is running slow", time: "10:24 AM" },
   { id: 2, type: "support", message: "Looking into it now", time: "10:25 AM" },
   { id: 3, type: "support", message: "Issue identified and resolved!", time: "10:28 AM" },
-  { id: 4, type: "user", message: "Works perfectly. Thanks!", time: "10:29 AM" },
 ];
 
 function SupportChatDemo() {
   return (
-    <div className="w-full max-w-[320px] space-y-3">
+    <div className="w-full max-w-[240px] md:max-w-[280px] lg:max-w-[320px] space-y-3">
       <div className="flex items-center gap-2 mb-4">
         <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
         <span className="text-sm text-muted-foreground">Support Online</span>
@@ -335,8 +327,8 @@ export function MainFeatures() {
           title="Expert Team"
           description="Our skilled engineers and consultants bring diverse expertise across modern technologies. From startups to enterprises, we deliver solutions that exceed expectations."
         >
-          <div className="flex items-center justify-center min-h-[280px] sm:min-h-[300px] rounded-lg bg-muted/50 p-2 sm:p-8 overflow-hidden">
-            <div className="scale-100 sm:scale-[0.80] origin-center">
+          <div className="flex items-center justify-center min-h-[300px] rounded-lg bg-muted/50 p-8 overflow-hidden">
+            <div className="scale-[0.80] origin-center w-[12rem] md:w-full -mt-16">
               <DisplayCards cards={expertTeamCards} />
             </div>
           </div>
@@ -346,7 +338,10 @@ export function MainFeatures() {
           title="Agile Development"
           description="We use iterative development cycles to deliver working software fast. Continuous feedback ensures your project evolves with your business needs."
         >
-          <div className="flex items-center justify-center min-h-[300px] rounded-lg bg-muted/50 p-6">
+          <div className="hidden md:flex md:items-center md:justify-center md:min-h-[300px] md:rounded-lg md:bg-muted/50 md:p-8 overflow-hidden">
+            <KanbanBoardDemo />
+          </div>
+          <div className="md:hidden flex items-center justify-center min-h-[300px] rounded-lg bg-muted/50 p-6">
             <KanbanBoardDemo />
           </div>
         </FeatureCard>
@@ -355,7 +350,7 @@ export function MainFeatures() {
           title="Reliable Support"
           description="We provide comprehensive maintenance and support services. When issues arise, our team responds quickly to keep your systems running smoothly."
         >
-          <div className="flex items-center justify-center min-h-[300px] rounded-lg bg-muted/50 p-6">
+          <div className="flex items-center justify-center min-h-[300px] rounded-lg bg-muted/50">
             <SupportChatDemo />
           </div>
         </FeatureCard>
@@ -364,7 +359,7 @@ export function MainFeatures() {
           title="Technology Partners"
           description="We collaborate with industry-leading technology providers. These partnerships enable us to deliver cutting-edge solutions using proven platforms."
         >
-          <div className="flex items-center justify-center min-h-[300px] rounded-lg bg-muted/50 p-8">
+          <div className="flex items-center justify-center min-h-[300px] rounded-lg bg-muted/50 p-8 overflow-hidden">
             <LogoCarousel columns={2} />
           </div>
         </FeatureCard>
