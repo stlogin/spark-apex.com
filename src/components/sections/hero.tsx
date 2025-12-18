@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Icons } from "@/components/icons";
-import { ComponentPreview } from "./component-preview";
 
 const ease = [0.16, 1, 0.3, 1];
 
@@ -22,7 +21,7 @@ function HeroPill() {
 
 function HeroContent() {
   return (
-    <div className="flex flex-col space-y-4">
+    <div className="flex flex-col items-center space-y-4">
       <motion.h1
         className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl"
         initial={{ opacity: 0, y: 20 }}
@@ -63,13 +62,10 @@ export default function Hero() {
 
       {/* Content */}
       <div className="container relative z-10">
-        <div className="flex min-h-[calc(100vh-64px)] flex-col lg:flex-row items-center py-8 px-4 md:px-8 lg:px-12">
-          <div className="flex flex-col gap-4 w-full lg:max-w-2xl">
+        <div className="flex min-h-[calc(100vh-64px)] flex-col items-center justify-center py-8 px-4 md:px-8 lg:px-12">
+          <div className="flex flex-col gap-4 text-center max-w-4xl">
             <HeroPill />
             <HeroContent />
-          </div>
-          <div className="w-full lg:max-w-xl lg:pl-16 mt-12 lg:mt-0">
-            <ComponentPreview />
           </div>
         </div>
       </div>
