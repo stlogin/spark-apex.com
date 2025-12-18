@@ -27,7 +27,7 @@ const expertTeamCards = [
     iconClassName: "text-purple-500",
     titleClassName: "text-purple-500",
     className:
-      "[grid-area:stack] translate-x-4 sm:translate-x-12 translate-y-10 hover:-translate-y-1 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 before:left-0 before:top-0",
+      "[grid-area:stack] translate-x-0 sm:translate-x-12 translate-y-10 hover:-translate-y-1 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 before:left-0 before:top-0",
   },
   {
     icon: <Rocket className="size-4 text-green-300" />,
@@ -37,7 +37,7 @@ const expertTeamCards = [
     iconClassName: "text-green-500",
     titleClassName: "text-green-500",
     className:
-      "[grid-area:stack] translate-x-8 sm:translate-x-24 translate-y-20 hover:translate-y-10",
+      "[grid-area:stack] translate-x-0 sm:translate-x-24 translate-y-20 hover:translate-y-10",
   },
 ];
 
