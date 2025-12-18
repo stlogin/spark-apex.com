@@ -63,7 +63,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="container relative z-10">
-        <div className="flex min-h-[calc(100vh-64px)] flex-col lg:flex-row items-center justify-center lg:justify-start py-8 px-4 md:px-8 lg:px-12">
+        <div className="flex min-h-[calc(100vh-64px)] flex-col lg:flex-row items-center justify-center lg:justify-start pt-24 pb-8 md:py-8 px-4 md:px-8 lg:px-12">
           <div className="flex flex-col gap-4 w-full lg:max-w-2xl">
             <HeroPill />
             <HeroContent />
