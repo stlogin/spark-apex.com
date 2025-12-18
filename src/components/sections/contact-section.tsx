@@ -118,9 +118,10 @@ export function ContactSection() {
                 <div>
                   <p className="font-medium">Spark Apex Inc.</p>
                   <p className="text-sm text-muted-foreground">
-                    123 Innovation Drive<br />
-                    Tech City, TC 12345<br />
-                    United States
+                    Fort Legend Tower Level 10-1<br />
+                    31st Street & 3rd Avenue<br />
+                    Bonifacio Global City<br />
+                    1632 Taguig City, Philippines
                   </p>
                 </div>
               </div>
@@ -139,7 +140,7 @@ export function ContactSection() {
                 <div className="flex justify-between">
                   <span>Monday - Friday</span>
                   <span className="text-muted-foreground">
-                    9:00 AM - 6:00 PM EST
+                    9:00 AM - 6:00 PM PHT
                   </span>
                 </div>
                 <div className="flex justify-between">
