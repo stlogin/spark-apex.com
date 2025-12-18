@@ -1,5 +1,3 @@
-import { withContentCollections } from "@content-collections/next";
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -12,58 +10,14 @@ const nextConfig = {
       },
       {
         protocol: "https",
-      hostname: "lh3.googleusercontent.com",
-    },
-    {
-      protocol: "https",
-      hostname: "avatar.vercel.sh",
-    },
-    {
-      protocol: "https",
-      hostname: "imagedelivery.net",
-    },
-    {
-      protocol: "https",
-        hostname: "d2vwwcvoksz7ty.cloudfront.net",
-      },
-      {
-        protocol: "https",
         hostname: "images.unsplash.com",
       },
       {
         protocol: "https",
-        hostname: "pbs.twimg.com",
-      },
-      {
-        protocol: "https",
-        hostname: "abs.twimg.com",
-      },
-      {
-        protocol: "https",
-        hostname: "ton.twimg.com",
+        hostname: "cdn.pixabay.com",
       },
     ],
   },
-  async redirects() {
-    return [
-      // Auth page redirects
-      {
-        source: '/pro/auth/signup',
-        destination: '/pro/upgrade',
-        permanent: true,
-      },
-      {
-        source: '/sign-up',
-        destination: '/pro/login',
-        permanent: true,
-      },
-    ];
-  },
-  experimental: {
-    optimizePackageImports: ["shiki"],
-  },
-  eslint: { ignoreDuringBuilds: true },
-  typescript: { ignoreBuildErrors: true },
 };
 
-export default withContentCollections(nextConfig);
+export default nextConfig;
