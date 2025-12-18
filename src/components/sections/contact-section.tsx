@@ -46,7 +46,7 @@ export function ContactSection() {
         >
           <Card>
             <CardHeader>
-              <CardTitle>Send us a message</CardTitle>
+              <CardTitle className="text-lg">Send us a message</CardTitle>
               <CardDescription>
                 Fill out the form below and we&apos;ll get back to you as soon as
                 possible.
@@ -107,7 +107,7 @@ export function ContactSection() {
         >
           <Card>
             <CardHeader>
-              <CardTitle>Office Location</CardTitle>
+              <CardTitle className="text-lg">Office Location</CardTitle>
               <CardDescription>
                 Visit us at our headquarters.
               </CardDescription>
@@ -130,7 +130,7 @@ export function ContactSection() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Business Hours</CardTitle>
+              <CardTitle className="text-lg">Business Hours</CardTitle>
               <CardDescription>
                 When you can expect to hear back from us.
               </CardDescription>
