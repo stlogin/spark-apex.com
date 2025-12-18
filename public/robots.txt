@@ -1,17 +1,37 @@
+# Block all crawlers
 User-agent: *
-Allow: /
+Disallow: /
 
-# Block access to API routes and internal paths
-Disallow: /api/
-Disallow: /_next/
-Disallow: /_vercel/
-Disallow: /generated/
+# Block AI crawlers specifically
+User-agent: GPTBot
+Disallow: /
 
-# Allow specific API routes that should be crawled
-Allow: /api/og/
+User-agent: ChatGPT-User
+Disallow: /
 
-# Sitemap
-Sitemap: https://prismui.tech/sitemap.xml
+User-agent: Google-Extended
+Disallow: /
 
-# Crawl delay (optional - helps reduce server load)
-Crawl-delay: 1
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /

@@ -1,7 +1,6 @@
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@/components/analytics";
-import { constructMetadata } from "@/lib/utils";
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -20,9 +19,18 @@ export const viewport: Viewport = {
   themeColor: "black",
 };
 
-export const metadata: Metadata = constructMetadata({
-  canonical: "https://www.prismui.tech",
-});
+export const metadata: Metadata = {
+  title: "Spark Apex - IT Solutions",
+  description: "Transform Your Business with IT Solutions",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
+};
 
 export default function RootLayout({
   children,
