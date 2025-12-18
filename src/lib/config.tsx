@@ -1,27 +1,26 @@
 export const BLUR_FADE_DELAY = 0.15;
 
 export const siteConfig = {
-  name: "Prism UI",
-  description: "Build better apps faster with Prism UI - Modern React component library with pre-built sections and advanced UI patterns",
+  name: "Spark Apex",
+  description: "Transform your business with cutting-edge IT solutions. From custom software development to digital transformation, we deliver innovative technology solutions.",
   url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
   keywords: [
-    "React Components",
-    "UI Library", 
-    "Tailwind CSS",
-    "Next.js",
-    "shadcn/ui",
-    "Component Library",
-    "UI Kit",
-    "Design System",
+    "IT Consulting",
+    "Software Development",
+    "Digital Transformation",
+    "Systems Integration",
     "Web Development",
-    "Frontend Framework"
+    "Enterprise Solutions",
+    "Cloud Services",
+    "IT Strategy",
+    "Business Technology",
+    "Custom Software"
   ],
   links: {
-    email: "support@prism.ui",
-    twitter: "https://twitter.com/prismui",
-    discord: "https://discord.gg/",
-    github: "https://github.com/Codehagen/Prismui",
-    instagram: "https://instagram.com/prismui/",
+    email: "support@spark-apex.com",
+    twitter: "",
+    discord: "",
+    instagram: "",
   },
   navItems: [
     {

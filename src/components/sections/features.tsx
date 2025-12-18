@@ -1,65 +1,56 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const features = [
   {
     number: "01",
-    title: "Beautiful Components",
+    title: "Systems Development",
     description:
-      "Beautiful components built with React, TypeScript, and Tailwind CSS. From buttons to complex data tables, we've got you covered with our battle-tested designs.",
+      "Custom software solutions tailored to your business needs. From web applications to enterprise systems, we build scalable and secure solutions that drive growth.",
     icon: (
-      <div className="relative w-full h-32 mx-auto grid grid-cols-2 gap-3">
-        <div className="space-y-3">
-          <div className="h-8 rounded-md bg-primary/20 animate-pulse" />
-          <div className="h-8 rounded-md bg-primary/20 animate-pulse delay-100" />
-        </div>
-        <div className="space-y-3">
-          <div className="h-8 rounded-md bg-primary/20 animate-pulse delay-200" />
-          <div className="h-8 rounded-md bg-primary/20 animate-pulse delay-300" />
-        </div>
+      <div className="relative w-full aspect-video mx-auto overflow-hidden rounded-lg">
+        <Image
+          src="/images/features/systems-development.jpg"
+          alt="Systems Development"
+          fill
+          className="object-cover"
+        />
       </div>
     ),
   },
   {
     number: "02",
-    title: "Ready-to-use Templates",
+    title: "Digital Transformation",
     description:
-      "Landing pages, dashboards, and app templates ready for production. From marketing sites to admin panels, we've got everything you need to ship products faster.",
+      "Modernize your business with cutting-edge digital solutions. We help organizations embrace new technologies to improve efficiency, reduce costs, and stay competitive.",
     icon: (
-      <div className="relative w-full h-32 mx-auto">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-full max-w-[240px] rounded-lg bg-muted/50 p-4">
-            <div className="space-y-2">
-              <div className="h-2 w-1/2 rounded bg-primary/20" />
-              <div className="h-2 w-full rounded bg-primary/20" />
-              <div className="h-2 w-3/4 rounded bg-primary/20" />
-            </div>
-            <div className="mt-4 grid grid-cols-2 gap-2">
-              <div className="h-6 rounded bg-primary/20" />
-              <div className="h-6 rounded bg-primary/20" />
-            </div>
-          </div>
-        </div>
+      <div className="relative w-full aspect-video mx-auto overflow-hidden rounded-lg">
+        <Image
+          src="/images/features/digital-transformation.jpg"
+          alt="Digital Transformation"
+          fill
+          className="object-cover"
+        />
       </div>
     ),
   },
   {
     number: "03",
-    title: "Ship Faster",
+    title: "IT Consulting",
     description:
-      "Focus on your product, not on building UI components. From startups to enterprises, our battle-tested designs help you convert visitors into happy customers.",
+      "Strategic technology guidance for your business. Our experts analyze your needs and provide actionable insights to optimize your IT infrastructure and processes.",
     icon: (
-      <div className="relative w-full h-32 mx-auto">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex items-center gap-3">
-            <div className="h-16 w-16 rounded-full bg-primary/20 animate-bounce delay-100" />
-            <div className="h-16 w-16 rounded-full bg-primary/20 animate-bounce delay-200" />
-            <div className="h-16 w-16 rounded-full bg-primary/20 animate-bounce delay-300" />
-          </div>
-        </div>
+      <div className="relative w-full aspect-video mx-auto overflow-hidden rounded-lg">
+        <Image
+          src="/images/features/it-consulting.jpg"
+          alt="IT Consulting"
+          fill
+          className="object-cover"
+        />
       </div>
     ),
   },
@@ -116,15 +107,14 @@ export function Features() {
           viewport={{ once: true }}
         >
           <Button variant="outline" className="rounded-full mb-4">
-            How it works
+            Our Services
           </Button>
           <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-4">
-            Ship beautiful products in half the time
+            End-to-End IT Solutions for Your Business
           </h2>
           <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
-            50+ beautiful sections and templates built with React, TypeScript,
-            Tailwind CSS, and Framer Motion. Save thousands of hours and convert
-            your visitors into customers.
+            We provide comprehensive IT services to help businesses thrive in the digital age.
+            From strategy to implementation, we're your trusted technology partner.
           </p>
         </motion.div>
       </div>

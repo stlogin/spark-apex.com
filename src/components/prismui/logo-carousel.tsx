@@ -131,7 +131,7 @@ function LogoColumn({ logos, columnIndex, currentTime }: LogoColumnProps) {
             alt={currentLogo.name}
             width={120}
             height={40}
-            className="h-auto w-auto max-h-[80%] max-w-[80%] object-contain"
+            className="h-auto w-auto max-h-[80%] max-w-[80%] object-contain dark:invert"
           />
         </motion.div>
       </AnimatePresence>
