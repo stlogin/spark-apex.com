@@ -1,6 +1,5 @@
 import Link from "next/link"
 
-import { siteConfig } from "@/lib/config"
 import { Icons } from "@/components/icons"
 import { ModeSwitcher } from "@/components/mode-switcher"
 
@@ -10,7 +9,7 @@ export function SiteHeader() {
       <div className="container flex h-14 items-center gap-2">
         <Link href="/" className="flex items-center space-x-1.5">
           <Icons.logo className="size-6" />
-          <span className="font-semibold text-lg">{siteConfig.name}</span>
+          <span className="font-semibold text-lg">Spark Apex</span>
         </Link>
         <div className="ml-auto flex items-center gap-2">
           <ModeSwitcher />

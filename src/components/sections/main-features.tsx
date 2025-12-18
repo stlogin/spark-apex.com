@@ -4,14 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import {
-  FloatingActionPanelRoot,
-  FloatingActionPanelTrigger,
-  FloatingActionPanelContent,
-  FloatingActionPanelButton,
-} from "@/components/prismui/floating-action-panel";
-import { ProjectStatusCard } from "@/components/prismui/expandable-card";
-import { Plus, Upload, Palette, Share2, BookMarked, Check, Shield, Users, Server, Database, Globe, Code, Lightbulb, Rocket, Circle, Clock, CheckCircle2 } from "lucide-react";
+import { Check, Shield, Users, Server, Database, Globe, Code, Lightbulb, Rocket, Circle, Clock, CheckCircle2 } from "lucide-react";
 import DisplayCards from "@/components/prismui/display-cards";
 import { LogoCarousel } from "@/components/prismui/logo-carousel";
 
@@ -70,64 +63,6 @@ function FeatureCard({ title, description, children }: FeatureCardProps) {
       <div className="p-8 pt-0">{children}</div>
     </motion.div>
   );
-}
-
-function FloatingActionPanelDemo() {
-  return (
-    <FloatingActionPanelRoot>
-      {(context) => (
-        <>
-          <FloatingActionPanelTrigger title="Actions" mode="actions">
-            <Plus className="mr-2 h-4 w-4" />
-            <span>Add new item</span>
-          </FloatingActionPanelTrigger>
-
-          <FloatingActionPanelContent className="w-[240px]">
-            <div className="p-2 space-y-1">
-              <FloatingActionPanelButton>
-                <Upload className="h-4 w-4" />
-                Upload files
-              </FloatingActionPanelButton>
-              <FloatingActionPanelButton>
-                <Palette className="h-4 w-4" />
-                Change theme
-              </FloatingActionPanelButton>
-              <FloatingActionPanelButton>
-                <Share2 className="h-4 w-4" />
-                Share project
-              </FloatingActionPanelButton>
-              <FloatingActionPanelButton>
-                <BookMarked className="h-4 w-4" />
-                Add to bookmarks
-              </FloatingActionPanelButton>
-            </div>
-          </FloatingActionPanelContent>
-        </>
-      )}
-    </FloatingActionPanelRoot>
-  );
-}
-
-function ExpandableCardDemo() {
-  const demoData = {
-    title: "Enterprise Migration",
-    progress: 75,
-    dueDate: "Q2 2025",
-    contributors: [
-      { name: "Project Lead" },
-      { name: "Tech Architect" },
-      { name: "Dev Team" },
-    ],
-    tasks: [
-      { title: "Requirements Analysis", completed: true },
-      { title: "System Architecture", completed: true },
-      { title: "Implementation", completed: false },
-    ],
-    githubStars: 0,
-    openIssues: 0,
-  };
-
-  return <ProjectStatusCard {...demoData} />;
 }
 
 const kanbanColumns = [

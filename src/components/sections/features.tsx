@@ -114,7 +114,7 @@ export function Features() {
           </h2>
           <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
             We provide comprehensive IT services to help businesses thrive in the digital age.
-            From strategy to implementation, we're your trusted technology partner.
+            From strategy to implementation, we&apos;re your trusted technology partner.
           </p>
         </motion.div>
       </div>
