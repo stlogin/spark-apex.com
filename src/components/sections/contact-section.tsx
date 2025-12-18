@@ -116,7 +116,7 @@ export function ContactSection() {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary mt-0.5" />
                 <div>
-                  <p className="font-medium">Spark Apex Inc.</p>
+                  <p className="font-medium">Spark Apex Technology Corporation</p>
                   <p className="text-sm text-muted-foreground">
                     Fort Legend Tower Level 10-1<br />
                     31st Street & 3rd Avenue<br />
