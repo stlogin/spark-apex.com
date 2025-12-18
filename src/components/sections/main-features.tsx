@@ -335,8 +335,8 @@ export function MainFeatures() {
           title="Expert Team"
           description="Our skilled engineers and consultants bring diverse expertise across modern technologies. From startups to enterprises, we deliver solutions that exceed expectations."
         >
-          <div className="flex items-center justify-center min-h-[300px] rounded-lg bg-muted/50 p-4 sm:p-8 overflow-hidden">
-            <div className="scale-[0.65] sm:scale-[0.80] origin-center w-full max-w-full">
+          <div className="flex items-center justify-center min-h-[280px] sm:min-h-[300px] rounded-lg bg-muted/50 p-2 sm:p-8 overflow-hidden">
+            <div className="scale-100 sm:scale-[0.80] origin-center">
               <DisplayCards cards={expertTeamCards} />
             </div>
           </div>
