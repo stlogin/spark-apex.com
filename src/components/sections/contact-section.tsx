@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   Card,
@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Loader2, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 
 interface FormData {
   firstName: string;
@@ -33,6 +34,8 @@ export function ContactSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -43,6 +46,12 @@ export function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!turnstileToken) {
+      toast.error("Please complete the security verification");
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -51,7 +60,10 @@ export function ContactSection() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          turnstileToken,
+        }),
       });
 
       const data = await response.json();
@@ -69,12 +81,15 @@ export function ContactSection() {
         subject: "",
         message: "",
       });
+      setTurnstileToken(null);
+      turnstileRef.current?.reset();
 
       setTimeout(() => setIsSubmitted(false), 3000);
     } catch (error) {
       toast.error(
         error instanceof Error ? error.message : "Failed to send message"
       );
+      turnstileRef.current?.reset();
     } finally {
       setIsSubmitting(false);
     }
@@ -189,7 +204,23 @@ export function ContactSection() {
                     disabled={isSubmitting}
                   />
                 </div>
-                <Button className="w-full" type="submit" disabled={isSubmitting}>
+                <div className="flex justify-center">
+                  <Turnstile
+                    ref={turnstileRef}
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                    onSuccess={setTurnstileToken}
+                    onError={() => {
+                      setTurnstileToken(null);
+                      toast.error("Security verification failed. Please try again.");
+                    }}
+                    onExpire={() => setTurnstileToken(null)}
+                  />
+                </div>
+                <Button
+                  className="w-full"
+                  type="submit"
+                  disabled={isSubmitting || !turnstileToken}
+                >
                   {isSubmitting ? (
                     <>
                       <Loader2 className="w-4 h-4 mr-2 animate-spin" />
